@@ -1,23 +1,25 @@
-type MessageDeviation = {
+type MessageVariants = {
   header: string,
-  details: string
+  details: string,
 }
 
-type Lines = {
-  transport_mode: string,
-  group_of_lines: string
+type Scope = {
+  lines: { transport_mode: string }[]
 }
 
-export type DataStructure = {
+export type MessageResponse = {
   deviation_case_id: string,
-  message_variants: MessageDeviation[],
-  scope: {
-    lines: Lines[]
-  }
+  message_variants: MessageVariants[],
+  scope: Scope
 }
 
-export default async function fetchSlData(): Promise<DataStructure[] | undefined> {
-  const data = await fetch('https://deviations.integration.sl.se/v1/messages');
+export default async function fetchSlData(): Promise<MessageResponse[]> {
+  const data = await fetch(
+    'https://deviations.integration.sl.se/v1/messages',
+    {
+      cache: 'no-store'
+    }
+  );
 
   if (!data.ok) {
     throw new Error('Failed at fetch data');

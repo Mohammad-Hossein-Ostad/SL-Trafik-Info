@@ -1,3 +1,4 @@
+import React from "react";
 import CategoriesPreview from "./components/categories-preview/categories-preview.component";
 import Header from "./components/header/header.component";
 
