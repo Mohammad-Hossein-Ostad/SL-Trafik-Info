@@ -12,9 +12,10 @@ export default function MetroCategoryPreview() {
       children={
         <Link href="/tunnelbana">
           <Image
+            priority={true}
             className="w-[400px] h-auto rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/C30_Metro_20200811_04.jpg/1920px-C30_Metro_20200811_04.jpg"
-            alt="metro"
+            alt="Picture of metro"
             width={300}
             height={300}
           />

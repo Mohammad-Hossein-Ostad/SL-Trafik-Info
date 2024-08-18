@@ -14,7 +14,7 @@ export default function BusCategoryPreview() {
           <Image
             className="w-[400px] h-auto rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/SL_bus_line_77_on_Sankt_Eriksbron.JPG/1920px-SL_bus_line_77_on_Sankt_Eriksbron.JPG"
-            alt="bus"
+            alt="Picture of bus"
             width={300}
             height={300}
           />

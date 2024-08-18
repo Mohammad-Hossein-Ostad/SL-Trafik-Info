@@ -5,13 +5,13 @@ import TramCategoryPreview from "../category-preview/tram-category-preview/tram-
 
 export default async function CategoriesPreview() {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container felx items-center p-1">
       <div className="grid grid-cols-3 gap-4">
-        <MetroCategoryPreview />
+        < MetroCategoryPreview />
         <TrainCategoryPreview />
         <BusCategoryPreview />
         <TramCategoryPreview />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

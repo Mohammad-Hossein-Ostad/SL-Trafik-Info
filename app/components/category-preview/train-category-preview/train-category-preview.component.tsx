@@ -14,7 +14,7 @@ export default function TrainCategoryPreview() {
           <Image
             className="w-[400px] h-auto rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Sundbybergs_station.jpg"
-            alt="train"
+            alt="Picture of train"
             width={300}
             height={300}
           />
