@@ -1,5 +1,5 @@
 import React from "react";
-import Category from '../../category/category.component'
+import Category from "../../category/category.component";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,13 +9,13 @@ export default function BusCategoryPreview() {
       title="Buss"
       detail="Få den senaste informationen om bussar"
       link="/buss"
-      children={
+      node={
         <Link href="/buss">
           <Image
-            className="w-[400px] h-auto rounded-lg"
+            className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/SL_bus_line_77_on_Sankt_Eriksbron.JPG/1920px-SL_bus_line_77_on_Sankt_Eriksbron.JPG"
             alt="Picture of bus"
-            width={300}
+            width={400}
             height={300}
           />
         </Link>

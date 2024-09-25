@@ -1,6 +1,6 @@
-import React from "react"
-import TransportMessages from "../components/transport-messages/transport-messages.component"
+import React from "react";
+import TransportMessages from "../components/transport-messages/transport-messages.component";
 
 export default function Page() {
-  return <TransportMessages transportMode="BUS" transportTag="Buss" />
+  return <TransportMessages transportMode="BUS" transportTag="Buss" />;
 }

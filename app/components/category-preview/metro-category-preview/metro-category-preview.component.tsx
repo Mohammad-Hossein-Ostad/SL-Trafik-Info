@@ -8,19 +8,18 @@ export default function MetroCategoryPreview() {
     <Category
       title="Tunnelbana"
       detail="Få den senaste informationen om tunnelbanan"
-      link='/tunnelbana'
-      children={
+      link="/tunnelbana"
+      node={
         <Link href="/tunnelbana">
           <Image
-            priority={true}
-            className="w-[400px] h-auto rounded-lg"
+            className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/C30_Metro_20200811_04.jpg/1920px-C30_Metro_20200811_04.jpg"
             alt="Picture of metro"
-            width={300}
+            width={400}
             height={300}
           />
         </Link>
       }
     />
-  )
+  );
 }

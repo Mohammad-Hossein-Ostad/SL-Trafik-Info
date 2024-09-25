@@ -9,17 +9,17 @@ export default function TrainCategoryPreview() {
       title="Pendeltåg"
       detail="Få den senaste informationen om pendeltågn"
       link="/pendeltag"
-      children={
+      node={
         <Link href="/pendeltag">
           <Image
-            className="w-[400px] h-auto rounded-lg"
+            className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Sundbybergs_station.jpg"
             alt="Picture of train"
-            width={300}
+            width={400}
             height={300}
           />
         </Link>
       }
     />
-  )
+  );
 }

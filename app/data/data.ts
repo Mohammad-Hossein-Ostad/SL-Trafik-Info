@@ -1,28 +1,26 @@
 type MessageVariants = {
-  header: string,
-  details: string,
-}
+  header: string;
+  details: string;
+};
 
 type Scope = {
-  lines: { transport_mode: string }[]
-}
+  lines: { transport_mode: string }[];
+};
 
 export type MessageResponse = {
-  deviation_case_id: string,
-  message_variants: MessageVariants[],
-  scope: Scope
-}
+  deviation_case_id: string;
+  message_variants: MessageVariants[];
+  scope: Scope;
+};
 
 export default async function fetchSlData(): Promise<MessageResponse[]> {
-  const data = await fetch(
-    'https://deviations.integration.sl.se/v1/messages',
-    {
-      cache: 'no-store'
-    }
-  );
+  const data = await fetch("https://deviations.integration.sl.se/v1/messages", {
+    cache: "no-store",
+  });
 
+  console.log(data);
   if (!data.ok) {
-    throw new Error('Failed at fetch data');
+    throw new Error("Failed at fetch data");
   }
 
   return data.json();
