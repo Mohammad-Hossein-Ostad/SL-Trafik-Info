@@ -17,6 +17,7 @@ export default function MetroCategoryPreview() {
             alt="Picture of metro"
             width={400}
             height={300}
+            priority={true}
           />
         </Link>
       }
