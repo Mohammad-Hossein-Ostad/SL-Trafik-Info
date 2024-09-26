@@ -18,7 +18,6 @@ export default async function fetchSlData(): Promise<MessageResponse[]> {
     cache: "no-store",
   });
 
-  console.log(data);
   if (!data.ok) {
     throw new Error("Failed at fetch data");
   }

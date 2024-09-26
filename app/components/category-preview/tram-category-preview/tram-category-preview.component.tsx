@@ -14,7 +14,7 @@ export default function TramCategoryPreview() {
           <Image
             className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Tv%C3%A4rbanan_2.jpg/1920px-Tv%C3%A4rbanan_2.jpg"
-            alt="Picture of bus"
+            alt="Picture of tram"
             width={400}
             height={300}
           />
