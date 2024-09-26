@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-type Tag = "Tunnelbana" | "Pendeltåg" | "Buss" | "Tvärbanan";
+type Tag = "Tunnelbana" | "Pendeltåg" | "Buss" | "Tvärbana";
 
 type Detail =
   | "Få den senaste informationen om tunnelbanan"
@@ -9,7 +9,7 @@ type Detail =
   | "Få den senaste informationen om bussar"
   | "Få den senaste informationen om Tvärbanan";
 
-type Link = "/tunnelbana" | "/pendeltag" | "/buss" | "/tvarbanan";
+type Link = "/tunnelbana" | "/pendeltag" | "/buss" | "/tvarbana";
 
 type CategoryProps = {
   title: Tag;

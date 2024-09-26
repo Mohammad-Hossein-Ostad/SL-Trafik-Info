@@ -2,7 +2,7 @@ import React from "react";
 import fetchSlData from "@/app/data/data";
 
 type TransportMode = "BUS" | "METRO" | "TRAIN" | "TRAM";
-type TransportTag = "Tunnelbana" | "Pendeltag" | "Buss" | "Tvarbanan";
+type TransportTag = "Tunnelbana" | "Pendeltag" | "Buss" | "Tvarbana";
 
 export default async function TransportMessages({
   transportMode,
