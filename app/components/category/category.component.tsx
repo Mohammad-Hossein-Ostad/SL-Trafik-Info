@@ -21,7 +21,7 @@ type CategoryProps = {
 export default function Category({ title, detail, link, node }: CategoryProps) {
   return (
     <>
-      <div className="m-2 bg-white border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="m-2 bg-white border-gray-200 rounded-lg shadow dark:bg-gray-900 ">
         {node}
         <div className="p-5">
           <a href={link}>
