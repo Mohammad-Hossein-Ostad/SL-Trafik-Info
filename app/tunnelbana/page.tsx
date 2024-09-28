@@ -5,14 +5,9 @@ import Footer from "../components/footer/footer.component";
 
 export default function Page() {
   return (
-    <>
-      <Header />
-      <TransportMessages
-        transportMode="METRO"
-        transportTag="Tunnelbanans avvikelsemeddelanden"
-      />
-      ;
-      <Footer />
-    </>
+    <TransportMessages
+      transportMode="METRO"
+      transportTag="Tunnelbanans avvikelsemeddelanden"
+    />
   );
 }

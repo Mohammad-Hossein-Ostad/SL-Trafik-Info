@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./components/header/header.component";
+import Footer from "./components/footer/footer.component";
 
 const inter = Inter({ subsets: ["latin"] });
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "SL Trafik Info",
@@ -20,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-screen bg-white`}>{children}</body>
+      <body className={`${inter.className} h-screen`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

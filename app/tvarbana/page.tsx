@@ -5,13 +5,9 @@ import Footer from "../components/footer/footer.component";
 
 export default function Page() {
   return (
-    <>
-      <Header />
-      <TransportMessages
-        transportMode="TRAM"
-        transportTag="Tvärbanans avvikelsemeddelanden"
-      />
-      <Footer />
-    </>
+    <TransportMessages
+      transportMode="TRAM"
+      transportTag="Tvärbanans avvikelsemeddelanden"
+    />
   );
 }
