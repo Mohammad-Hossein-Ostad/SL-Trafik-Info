@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import ThemeToggleButton from "../theme-toggle-button.tsx/themeToggleButton";
 
 export default function Header() {
   return (
@@ -47,6 +48,9 @@ export default function Header() {
               >
                 Tvärbana
               </Link>
+            </li>
+            <li>
+              <ThemeToggleButton />
             </li>
           </ul>
         </div>
