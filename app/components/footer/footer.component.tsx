@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   const currentDate = new Date().getFullYear();
   return (
@@ -8,13 +10,13 @@ export default function Footer() {
             Made by 🌮 ©{currentDate}
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <a
+            <Link
               href="https://github.com/Mohammad-Hossein-Ostad"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
                 className="w-5 h-5"
-                aria-hidden="true"
+               aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -26,8 +28,8 @@ export default function Footer() {
                 />
               </svg>
               <span className="sr-only">GitHub account</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/in/mohammad-hossein-ostad-rajabali-97666a258/"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
@@ -46,7 +48,7 @@ export default function Footer() {
                 <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
               </svg>
               <span className="sr-only">LinkedIn account</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
