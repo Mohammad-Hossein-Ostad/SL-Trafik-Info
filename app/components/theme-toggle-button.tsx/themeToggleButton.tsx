@@ -11,7 +11,7 @@ export default function ThemeToggleButton() {
 
   return (
     <button className="text-black dark:text-white" onClick={toggleTheme}>
-      {theme} mode
+      Change theme
     </button>
   );
 }
