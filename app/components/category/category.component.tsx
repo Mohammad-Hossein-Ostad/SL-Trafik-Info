@@ -9,7 +9,7 @@ type Detail =
   | "Få den senaste informationen om bussar"
   | "Få den senaste informationen om Tvärbanan";
 
-type Link = "/tunnelbana" | "/pendeltag" | "/buss" | "/tvarbana";
+type Link = "/metro" | "/train" | "/bus" | "/tram";
 
 type CategoryProps = {
   title: Tag;

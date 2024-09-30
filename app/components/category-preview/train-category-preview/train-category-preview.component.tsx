@@ -8,9 +8,9 @@ export default function TrainCategoryPreview() {
     <Category
       title="Pendeltåg"
       detail="Få den senaste informationen om pendeltågn"
-      link="/pendeltag"
+      link="/train"
       node={
-        <Link href="/pendeltag">
+        <Link href="/train">
           <Image
             className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Sundbybergs_station.jpg"

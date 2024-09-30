@@ -1,5 +1,5 @@
 import React from "react";
-import fetchSlData from "@/app/data/data";
+//import fetchSlData from "app/data/data";
 
 type TransportMode = "BUS" | "METRO" | "TRAIN" | "TRAM";
 type TransportTag =
@@ -15,7 +15,7 @@ export default async function TransportMessages({
   transportMode: TransportMode;
   transportTag: TransportTag;
 }) {
-  const data = await fetchSlData();
+ // const data = await fetchSlData();
 
   return (
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto mt-20 p-4">

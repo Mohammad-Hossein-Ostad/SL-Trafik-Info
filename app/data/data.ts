@@ -4,23 +4,22 @@ type MessageVariants = {
 };
 
 type Scope = {
-  lines: { transport_mode: string }[];
+  lines: { transport_mode: string; group_of_lines: string }[];
 };
 
 export type MessageResponse = {
-  deviation_case_id: string;
+  deviation_case_id: number;
   message_variants: MessageVariants[];
   scope: Scope;
-};
+}[];
 
-export default async function fetchSlData(): Promise<MessageResponse[]> {
-  const data = await fetch("https://deviations.integration.sl.se/v1/messages", {
-    cache: "no-store",
-  });
+export async function generateStaticParams() {
+  const posts: MessageResponse = await fetch(
+    "https://deviations.integration.sl.se/v1/messages",
+    { cache: "no-store" }
+  ).then((res) => res.json());
 
-  if (!data.ok) {
-    throw new Error("Failed at fetch data");
-  }
-
-  return data.json();
+  return posts.map((post) => ({
+    slug: post.scope.lines[0].transport_mode,
+  }));
 }

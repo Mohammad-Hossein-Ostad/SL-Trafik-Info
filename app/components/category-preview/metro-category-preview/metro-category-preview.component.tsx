@@ -8,9 +8,9 @@ export default function MetroCategoryPreview() {
     <Category
       title="Tunnelbana"
       detail="Få den senaste informationen om tunnelbanan"
-      link="/tunnelbana"
+      link="/metro"
       node={
-        <Link href="/tunnelbana">
+        <Link href="/metro">
           <Image
             className="rounded-lg"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/C30_Metro_20200811_04.jpg/1920px-C30_Metro_20200811_04.jpg"
