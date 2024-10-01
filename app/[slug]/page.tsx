@@ -1,5 +1,7 @@
 export const dynamicParams = false;
 
+import { notFound } from "next/navigation";
+
 type MessageVariants = {
   header: string;
   details: string;
@@ -29,6 +31,11 @@ export async function generateStaticParams() {
 // Page component handling dynamic slugs
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
+
+  if (!slug) {
+    notFound();
+  }
+
   const post: MessageResponse = await fetch(
     "https://deviations.integration.sl.se/v1/messages",
     { cache: "no-store" }
@@ -44,7 +51,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           if (lines && lines.length > 0) {
             const { transport_mode } = lines[0];
             const { header, details } = message_variants[0];
-
             if (transport_mode.toLowerCase() === slug) {
               return (
                 <div key={deviation_case_id}>
