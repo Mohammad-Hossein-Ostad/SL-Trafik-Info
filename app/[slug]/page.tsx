@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const post: MessageResponse = await fetch(
     "https://deviations.integration.sl.se/v1/messages",
-    { cache: "no-store", next: { revalidate: 60 } }
+    { cache: "no-store" }
   ).then((res) => res.json());
 
   return (
