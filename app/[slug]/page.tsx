@@ -17,12 +17,12 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const posts: MessageResponse = await fetch(
-    "https://deviations.integration.sl.se/v1/messages",
-    { cache: "no-store" }
+    "https://deviations.integration.sl.se/v1/messages"
   ).then((res) => res.json());
 
   return posts.map((post) => {
     const lines = post.scope.lines;
+
     if (lines && lines.length > 0) {
       const { transport_mode } = lines[0];
       return { slug: transport_mode.toLowerCase() };
@@ -35,9 +35,10 @@ export async function generateStaticParams() {
 // Page component handleing dynamic slugs
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
+
   const post: MessageResponse = await fetch(
     "https://deviations.integration.sl.se/v1/messages",
-    { cache: "no-store" }
+    { cache: "no-store", next: { revalidate: 60 } }
   ).then((res) => res.json());
 
   return (
@@ -53,9 +54,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
             if (transport_mode?.toLowerCase() === slug) {
               return (
-                <div key={deviation_case_id}>
-                  <h3 className="text-2xl">{header}</h3>
-                  <p className="text-sm">{details}</p>
+                <div
+                  className="flex flex-col my-5 font-mono"
+                  key={deviation_case_id}
+                >
+                  <article>
+                    <h3 className="text-2xl my-3">{header}</h3>
+                    <p className="text-sm">{details}</p>
+                  </article>
                 </div>
               );
             }
