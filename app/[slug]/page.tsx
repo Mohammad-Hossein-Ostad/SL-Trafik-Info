@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 type MessageVariants = {
   header: string;
   details: string;
@@ -13,11 +15,9 @@ type MessageResponse = {
   scope: Scope;
 }[];
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   const posts: MessageResponse = await fetch(
-    "https://deviations.integration.sl.se/v1/messages"
+    "https://deviations.integration.sl.se/v1/messages",
   ).then((res) => res.json());
 
   return posts.map((post) => {
@@ -35,14 +35,25 @@ export async function generateStaticParams() {
 // Page component handleing dynamic slugs
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
-
   const post: MessageResponse = await fetch(
     "https://deviations.integration.sl.se/v1/messages",
-    { cache: "no-store" }
+    { cache: "no-store" },
   ).then((res) => res.json());
 
+  const transportModelList = post.map(
+    (transport) => transport.scope.lines[0].transport_mode,
+  );
+
+  const filteredTransportModel = transportModelList.filter(
+    (model, index, array) => array.indexOf(model) === index,
+  );
+
+  if (!filteredTransportModel.includes(slug.toUpperCase())) {
+    notFound();
+  }
+
   return (
-    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto mt-20 p-4">
+    <div className="mx-auto mt-20 flex max-w-screen-xl flex-wrap items-center justify-between p-3">
       <div>
         {post.map((message) => {
           const { deviation_case_id, message_variants, scope } = message;
@@ -52,14 +63,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
             const { transport_mode } = lines[0];
             const { header, details } = message_variants[0];
 
-            if (transport_mode?.toLowerCase() === slug) {
+            if (transport_mode.toLowerCase() === slug) {
               return (
                 <div
-                  className="flex flex-col my-5 font-mono"
+                  className="my-5 flex flex-col font-mono"
                   key={deviation_case_id}
                 >
                   <article>
-                    <h3 className="text-2xl my-3">{header}</h3>
+                    <h3 className="my-3 text-2xl">{header}</h3>
                     <p className="text-sm">{details}</p>
                   </article>
                 </div>
