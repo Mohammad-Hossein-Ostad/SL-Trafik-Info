@@ -68,8 +68,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   key={deviation_case_id}
                 >
                   <article>
-                    <h3 className="my-3 text-2xl">{header}</h3>
-                    <p className="text-sm">{details}</p>
+                    <h3 className="my-3 text-2xl dark:text-white">{header}</h3>
+                    <p className="text-sm dark:text-gray-400">{details}</p>
                   </article>
                 </div>
               );
