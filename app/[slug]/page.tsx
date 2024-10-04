@@ -44,13 +44,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
     (transport) => transport.scope.lines[0].transport_mode,
   );
 
-  const filteredTransportModel = transportModelList.filter(
+  const uniqueTransportModes = transportModelList.filter(
     (model, index, array) => array.indexOf(model) === index,
   );
 
-  if (!filteredTransportModel.includes(slug.toUpperCase())) {
-    notFound();
-  }
+  if (!uniqueTransportModes.includes(slug.toUpperCase())) notFound();
 
   return (
     <div className="mx-auto mt-20 flex max-w-screen-xl flex-wrap items-center justify-between p-3">
