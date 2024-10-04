@@ -64,7 +64,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             if (transport_mode.toLowerCase() === slug) {
               return (
                 <div
-                  className="my-5 flex flex-col font-mono"
+                  className="my-5 flex flex-col font-mono dark:text-white"
                   key={deviation_case_id}
                 >
                   <article>
