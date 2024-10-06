@@ -3,20 +3,20 @@ import Link from "next/link";
 export default function Footer() {
   const currentDate = new Date().getFullYear();
   return (
-    <footer className="font-mono bg:white dark:bg-gray-900">
+    <footer className="bg:white font-mono dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-10">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             Made by 🌮 ©{currentDate}
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
+          <div className="mt-4 flex sm:mt-0 sm:justify-center">
             <Link
               href="https://github.com/Mohammad-Hossein-Ostad"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-5 h-5"
-               aria-hidden="true"
+                className="h-5 w-5"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -30,11 +30,11 @@ export default function Footer() {
               <span className="sr-only">GitHub account</span>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/mohammad-hossein-ostad-rajabali-97666a258/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              href="https://www.linkedin.com/in/mohammad-hossein-ostad-97666a258/"
+              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-5 h-5"
+                className="h-5 w-5"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
