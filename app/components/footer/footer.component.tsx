@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   const currentDate = new Date().getFullYear();
   return (
-    <footer className="bg:white font-mono dark:bg-gray-900">
+    <footer className="font-mono">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-10">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">

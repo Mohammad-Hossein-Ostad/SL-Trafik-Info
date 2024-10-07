@@ -1,18 +1,26 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
-export default function ThemeToggleButton() {
+export default function ThemeSwitcher() {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   function toggleTheme() {
-    return setTheme(resolvedTheme === "light" ? "dark" : "light");
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   }
 
   return (
     <button onClick={toggleTheme} title="toggle theme">
       <svg
-        className="w-6 h-6 text-gray-800 dark:text-white"
+        className="h-6 w-6 text-gray-800 dark:text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"

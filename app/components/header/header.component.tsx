@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ThemeToggleButton from "../theme-toggle-button.tsx/themeToggleButton";
+import ThemeSwitcher from "../../components/theme-switcher/theme-switcher.component";
 
 export default function Header() {
   return (
@@ -50,7 +50,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <ThemeToggleButton />
+              <ThemeSwitcher />
             </li>
           </ul>
         </div>
