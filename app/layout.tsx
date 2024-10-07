@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} dark:bg-gray-900`}>
-        <main>
+      <body className={inter.className}>
+        <Providers>
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
-        </main>
+        </Providers>
       </body>
     </html>
   );
