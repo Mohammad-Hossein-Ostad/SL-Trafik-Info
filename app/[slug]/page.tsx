@@ -1,24 +1,8 @@
 import { notFound } from "next/navigation";
-
-type MessageVariants = {
-  header: string;
-  details: string;
-};
-
-type Scope = {
-  lines: { transport_mode: string; group_of_lines: string }[];
-};
-
-type MessageResponse = {
-  deviation_case_id: number;
-  message_variants: MessageVariants[];
-  scope: Scope;
-}[];
+import { fetchMessages } from "../lib/fetchers/slApi";
 
 export async function generateStaticParams() {
-  const posts: MessageResponse = await fetch(
-    "https://deviations.integration.sl.se/v1/messages",
-  ).then((res) => res.json());
+  const posts = await fetchMessages();
 
   return posts.map((post) => {
     const lines = post.scope.lines;
@@ -35,10 +19,7 @@ export async function generateStaticParams() {
 // Page component handleing dynamic slugs
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const post: MessageResponse = await fetch(
-    "https://deviations.integration.sl.se/v1/messages",
-    { cache: "no-store" },
-  ).then((res) => res.json());
+  const post = await fetchMessages();
 
   const transportModelList = post.map(
     (transport) => transport.scope.lines[0].transport_mode,
