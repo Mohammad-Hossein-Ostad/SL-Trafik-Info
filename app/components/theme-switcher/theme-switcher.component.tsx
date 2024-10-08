@@ -20,7 +20,7 @@ export default function ThemeSwitcher() {
   return (
     <button onClick={toggleTheme} title="toggle theme">
       <svg
-        className="h-6 w-6 text-gray-800 dark:text-white"
+        className="h-6 w-6 text-gray-500 hover:text-gray-900  dark:hover:text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
