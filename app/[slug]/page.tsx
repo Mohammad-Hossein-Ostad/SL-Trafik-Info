@@ -50,7 +50,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 >
                   <article>
                     <h3 className="my-3 text-2xl dark:text-white">{header}</h3>
-                    <p className="text-sm dark:text-gray-400">{details}</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-400">
+                      {details}
+                    </p>
                   </article>
                 </div>
               );
