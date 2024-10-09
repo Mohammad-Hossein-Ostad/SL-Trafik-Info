@@ -5,7 +5,7 @@ import TramCategoryPreview from "../category-preview/tram-category-preview/tram-
 
 export default function CategoriesPreview() {
   return (
-    <div className="mx-auto mt-20 flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+    <div className="mx-auto mt-20 flex max-w-screen-xl flex-wrap items-center justify-between pt-4">
       <MetroCategoryPreview />
       <TrainCategoryPreview />
       <BusCategoryPreview />

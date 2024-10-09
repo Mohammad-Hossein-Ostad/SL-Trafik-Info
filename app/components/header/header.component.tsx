@@ -5,7 +5,7 @@ import ThemeSwitcher from "../../components/theme-switcher/theme-switcher.compon
 export default function Header() {
   return (
     <nav className="fixed start-0 top-0 z-20 mb-10 w-full border-gray-200 bg-white dark:bg-gray-900">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+      <div className="m-4 mx-auto flex max-w-screen-xl flex-wrap items-center justify-between rounded-lg p-4 shadow">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
